@@ -17,8 +17,8 @@ namespace Authentication_JWT_RSA.Controllers
             this.options = options;
         }
 
-        [HttpGet(nameof(Generate))]
-        public async Task<IActionResult> Generate()
+        [HttpGet(nameof(GenerateJWT))]
+        public async Task<IActionResult> GenerateJWT()
         {
             var rsa = RSA.Create();
             string key = await System.IO.File.ReadAllTextAsync(options.PrivateKeyFilePath);
@@ -33,8 +33,8 @@ namespace Authentication_JWT_RSA.Controllers
         }
 
         [Authorize]
-        [HttpGet(nameof(Verify))]
-        public async Task<IActionResult> Verify()
+        [HttpGet(nameof(VerifyJWT))]
+        public async Task<IActionResult> VerifyJWT()
         {
             return Ok();
         }
