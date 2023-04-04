@@ -9,7 +9,7 @@ namespace Authentication_JWT_RSA
         {
             string? keysFolder = Path.GetDirectoryName(options.PrivateKeyFilePath);
 
-            if(!Directory.Exists(keysFolder)) Directory.CreateDirectory(keysFolder);
+            if(!Directory.Exists(keysFolder) && keysFolder is not null) Directory.CreateDirectory(keysFolder);
 
             var rsa = RSA.Create();
             string privateKeyXml = rsa.ToXmlString(true);
