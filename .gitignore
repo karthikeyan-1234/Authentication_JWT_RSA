@@ -147,6 +147,10 @@ coverage*.json
 coverage*.xml
 coverage*.info
 
+# Keys
+private.xml
+public.xml
+
 # Visual Studio code coverage results
 *.coverage
 *.coveragexml
